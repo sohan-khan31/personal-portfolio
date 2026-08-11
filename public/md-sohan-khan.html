@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0c1420" />
+<title>Md Sohan Khan — Disaster Management Researcher | GIS &amp; Remote Sensing</title>
+<meta name="description" content="Personal portfolio of Md Sohan Khan, a disaster management researcher specializing in GIS, remote sensing, river geomorphology, and climate resilience research in Bangladesh." />
+<style>
+  :root {
+    --bg: #0c1420;
+    --bg-2: #101b2b;
+    --card: #14212f;
+    --card-2: #182838;
+    --fg: #e9eef5;
+    --muted: #8ea1b5;
+    --border: rgba(255, 255, 255, 0.10);
+    --primary: #34d0d8;
+    --primary-dim: rgba(52, 208, 216, 0.14);
+    --accent: #e6b566;
+    --accent-dim: rgba(230, 181, 102, 0.14);
+    --radius: 10px;
+    --maxw: 1120px;
+    --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Space Grotesk", var(--font);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; letter-spacing: -0.01em; }
+  ::selection { background: var(--primary); color: var(--bg); }
+
+  /* ---------- Layout helpers ---------- */
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  section { position: relative; padding: 92px 0; }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-display); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--primary);
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--primary); display: inline-block; }
+  .section-title { font-size: clamp(26px, 4vw, 40px); margin: 14px 0 10px; }
+  .section-sub { color: var(--muted); max-width: 620px; }
+  .divider { height: 1px; background: var(--border); border: none; }
+
+  .tag {
+    display: inline-block; font-size: 12.5px; padding: 5px 11px; border-radius: 999px;
+    background: var(--card-2); border: 1px solid var(--border); color: var(--fg);
+  }
+  .chip-cyan { background: var(--primary-dim); border-color: rgba(52,208,216,0.35); color: var(--primary); }
+  .chip-amber { background: var(--accent-dim); border-color: rgba(230,181,102,0.35); color: var(--accent); }
+
+  .card {
+    background: linear-gradient(180deg, var(--card), var(--bg-2));
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 24px;
+    transition: transform .35s ease, border-color .35s ease;
+  }
+  .card:hover { transform: translateY(-3px); border-color: rgba(52,208,216,0.35); }
+
+  /* ---------- Header / Nav ---------- */
+  header#nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(12, 20, 32, 0.72);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 700; }
+  .brand .mark {
+    width: 38px; height: 38px; border-radius: 9px; display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg);
+    font-size: 14px; font-weight: 700; letter-spacing: -0.03em;
+  }
+  .brand small { display: block; font-family: var(--font); font-weight: 400; font-size: 11.5px; color: var(--muted); letter-spacing: .02em; }
+  nav.links { display: flex; gap: 4px; align-items: center; }
+  nav.links a {
+    font-size: 14px; color: var(--muted); padding: 8px 12px; border-radius: 7px; transition: color .2s, background .2s;
+  }
+  nav.links a:hover { color: var(--fg); background: var(--card-2); }
+  .nav-cta {
+    font-size: 13.5px; font-weight: 600; padding: 9px 16px; border-radius: 8px;
+    background: var(--primary); color: var(--bg) !important;
+  }
+  .nav-cta:hover { background: #4be0e8; }
+  .menu-btn { display: none; background: none; border: 1px solid var(--border); color: var(--fg);
+    border-radius: 8px; padding: 8px 10px; cursor: pointer; font-size: 15px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: 72px; padding-bottom: 72px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(60% 60% at 80% 10%, rgba(52,208,216,0.16), transparent 60%),
+      radial-gradient(50% 50% at 12% 90%, rgba(230,181,102,0.12), transparent 60%);
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 48px; align-items: center; }
+  .status {
+    display: inline-flex; align-items: center; gap: 9px; font-size: 13px; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; background: var(--card);
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px rgba(52,208,216,0.18); }
+  .hero h1 { font-size: clamp(38px, 6.2vw, 68px); margin: 22px 0 6px; }
+  .hero .grad {
+    background: linear-gradient(100deg, var(--fg) 0%, var(--primary) 55%, var(--accent) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero h2 { font-size: clamp(16px, 2.4vw, 22px); font-weight: 500; color: var(--muted); font-family: var(--font); }
+  .hero p.tagline { margin: 20px 0 0; max-width: 560px; color: #b8c6d6; font-size: 16.5px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .hero-meta .tag { display: inline-flex; align-items: center; gap: 7px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14.5px;
+    padding: 12px 20px; border-radius: 9px; cursor: pointer; transition: transform .2s, background .2s, border-color .2s;
+    border: 1px solid transparent;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--primary); color: var(--bg); }
+  .btn-primary:hover { background: #4be0e8; }
+  .btn-ghost { border-color: var(--border); color: var(--fg); background: var(--card); }
+  .btn-ghost:hover { border-color: var(--primary); }
+
+  .hero-card {
+    background: linear-gradient(180deg, var(--card), var(--bg-2));
+    border: 1px solid var(--border); border-radius: 16px; padding: 26px; position: relative; overflow: hidden;
+  }
+  .hero-card .ring {
+    width: 116px; height: 116px; border-radius: 50%; margin: 4px auto 16px; display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg);
+    font-family: var(--font-display); font-weight: 700; font-size: 34px; letter-spacing: -0.02em;
+  }
+  .hero-card h3 { text-align: center; font-size: 19px; }
+  .hero-card .loc { text-align: center; color: var(--muted); font-size: 13.5px; margin-top: 4px; }
+  .hero-card .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+  .stat {
+    background: var(--card-2); border: 1px solid var(--border); border-radius: 9px; padding: 14px;
+  }
+  .stat .v { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--primary); }
+  .stat .l { font-size: 12.5px; color: var(--fg); margin-top: 2px; }
+  .stat .s { font-size: 11px; color: var(--muted); }
+
+  /* ---------- Sections generic ---------- */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .mt-head { margin-bottom: 44px; }
+
+  .lead { font-size: 16.5px; color: #c2cfdd; }
+  .kv { display: flex; gap: 10px; font-size: 14.5px; padding: 9px 0; border-bottom: 1px dashed var(--border); }
+  .kv:last-child { border-bottom: none; }
+  .kv .k { color: var(--muted); min-width: 108px; }
+  .interest-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+  /* ---------- Timeline ---------- */
+  .timeline { position: relative; margin-top: 10px; padding-left: 30px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; padding: 0 0 30px 0; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -30px; top: 6px; width: 14px; height: 14px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--primary);
+  }
+  .tl-item.cur::before { background: var(--primary); box-shadow: 0 0 0 4px rgba(52,208,216,0.2); }
+  .tl-date { font-family: var(--font-display); font-size: 12.5px; color: var(--accent); letter-spacing: .04em; }
+  .tl-role { font-size: 17px; margin: 4px 0 2px; }
+  .tl-org { font-size: 14px; color: var(--muted); }
+  .tl-detail { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 2px; }
+  .tl-project {
+    font-size: 13.5px; margin-top: 10px; padding: 9px 12px; border-radius: 8px;
+    background: var(--primary-dim); border: 1px solid rgba(52,208,216,0.28); color: #cbe9ea;
+  }
+  .tl-points { list-style: none; margin-top: 12px; display: grid; gap: 8px; }
+  .tl-points li { position: relative; padding-left: 18px; font-size: 14px; color: #c2cfdd; }
+  .tl-points li::before { content: "▸"; position: absolute; left: 0; color: var(--primary); }
+  .tl-tools { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+  .tl-tools b { color: var(--accent); font-weight: 600; }
+
+  .subhead { font-family: var(--font-display); font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted); margin: 6px 0 20px; }
+
+  /* ---------- Publications ---------- */
+  .pub-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .pub-count { font-family: var(--font-display); color: var(--primary); }
+  .pub-list { list-style: none; display: grid; gap: 12px; }
+  .pub-list li {
+    display: flex; gap: 14px; padding: 16px; border-radius: 9px; background: var(--card); border: 1px solid var(--border);
+    font-size: 14px; color: #c8d4e1; transition: border-color .3s;
+  }
+  .pub-list li:hover { border-color: rgba(52,208,216,0.35); }
+  .pub-list .num { font-family: var(--font-display); color: var(--primary); font-size: 13px; min-width: 26px; }
+  .pub-list b { color: var(--fg); }
+
+  /* ---------- Education ---------- */
+  .edu-item { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; }
+  .edu-grade { text-align: right; }
+  .edu-grade .g { font-family: var(--font-display); color: var(--primary); font-weight: 700; }
+  .edu-date { font-size: 12.5px; color: var(--accent); font-family: var(--font-display); letter-spacing: .04em; }
+
+  /* ---------- Skills ---------- */
+  .skill-cat { font-family: var(--font-display); font-size: 15px; margin-bottom: 12px; color: var(--fg); }
+  .skill-cat span { color: var(--primary); }
+  .lang-bar { margin-top: 6px; }
+  .lang-name { display: flex; justify-content: space-between; font-size: 14.5px; }
+  .lang-name b { font-family: var(--font-display); }
+  .lang-name .lv { color: var(--accent); font-size: 12.5px; }
+  .lang-levels { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .train-list { list-style: none; display: grid; gap: 10px; }
+  .train-list li { display: flex; gap: 14px; font-size: 14px; padding-bottom: 10px; border-bottom: 1px dashed var(--border); }
+  .train-list .yr { font-family: var(--font-display); color: var(--accent); min-width: 44px; }
+  .train-list .org { color: var(--muted); font-size: 12.5px; }
+
+  /* ---------- Awards ---------- */
+  .award-item { border-left: 2px solid var(--primary); padding: 4px 0 4px 16px; }
+  .award-item.amber { border-left-color: var(--accent); }
+  .award-title { font-size: 15px; font-family: var(--font-display); }
+  .award-org { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .award-date { font-size: 12px; color: var(--accent); font-family: var(--font-display); margin-top: 4px; letter-spacing: .03em; }
+  .award-desc { font-size: 13px; color: #b6c3d2; margin-top: 6px; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .contact-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--border); font-size: 14.5px; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row .k { color: var(--muted); min-width: 84px; font-size: 13px; }
+  .contact-row a:hover { color: var(--primary); }
+  .socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+  .social {
+    display: inline-flex; flex-direction: column; padding: 12px 14px; border-radius: 9px; background: var(--card);
+    border: 1px solid var(--border); min-width: 150px; transition: border-color .3s, transform .3s;
+  }
+  .social:hover { border-color: var(--primary); transform: translateY(-2px); }
+  .social .lbl { font-family: var(--font-display); font-size: 13px; color: var(--primary); }
+  .social .hnd { font-size: 12.5px; color: var(--muted); margin-top: 2px; word-break: break-all; }
+  .ref-card { background: var(--card); border: 1px solid var(--border); border-radius: 9px; padding: 16px; }
+  .ref-card h4 { font-size: 15px; }
+  .ref-card .role { font-size: 13px; color: var(--accent); margin-top: 2px; }
+  .ref-card .org { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .ref-card .cta { font-size: 12.5px; margin-top: 10px; display: grid; gap: 3px; }
+  .ref-card .cta a:hover { color: var(--primary); }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--border); padding: 34px 0; color: var(--muted); font-size: 13.5px; }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+
+  /* ---------- Reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+    .grid-2, .grid-3, .contact-grid { grid-template-columns: 1fr; }
+    nav.links { display: none; }
+    nav.links.open {
+      display: flex; flex-direction: column; position: absolute; top: 66px; left: 0; right: 0;
+      background: var(--bg-2); border-bottom: 1px solid var(--border); padding: 12px 24px; gap: 4px;
+    }
+    nav.links.open a { padding: 10px 8px; }
+    .menu-btn { display: inline-block; }
+    section { padding: 66px 0; }
+  }
+  @media (max-width: 560px) {
+    .hero-card .stat-grid { grid-template-columns: 1fr 1fr; }
+    .edu-item { flex-direction: column; }
+    .edu-grade { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <span class="mark">MSK</span>
+      <span>Md Sohan Khan<small>Disaster Management Researcher</small></span>
+    </a>
+    <nav class="links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="mailto:sohan31du@gmail.com">Get in touch</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">Menu</button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero bg-grid" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="status"><span class="dot"></span> Research Associate · IDMVS, University of Dhaka</span>
+        <h1><span class="grad">Md Sohan Khan</span></h1>
+        <h2>Disaster Management Researcher — GIS &amp; Remote Sensing Specialist</h2>
+        <p class="tagline">Researching rivers, floods, and climate resilience — turning satellite data and geospatial science into solutions for vulnerable communities.</p>
+        <div class="hero-meta">
+          <span class="tag">📍 Dhaka, Bangladesh</span>
+          <span class="tag">🛰️ GIS &amp; Remote Sensing</span>
+          <span class="tag">🌊 River Morphodynamics</span>
+          <span class="tag">🌡️ Climate Resilience</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#research">View research →</a>
+          <a class="btn btn-ghost" href="#contact">Contact &amp; references</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="ring">MSK</div>
+        <h3>Md Sohan Khan</h3>
+        <p class="loc">Dhaka, Bangladesh · Born 10 Mar 2001 · Bangladeshi</p>
+        <div class="stat-grid">
+          <div class="stat"><div class="v">3.86</div><div class="l">Master's CGPA</div><div class="s">out of 4.00</div></div>
+          <div class="stat"><div class="v">12+</div><div class="l">Journal &amp; working papers</div><div class="s">authored / co-authored</div></div>
+          <div class="stat"><div class="v">10+</div><div class="l">Research roles</div><div class="s">leading institutions</div></div>
+          <div class="stat"><div class="v">2</div><div class="l">Fellowships</div><div class="s">SPARRSO &amp; NST</div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="mt-head reveal">
+      <span class="eyebrow">About</span>
+      <h2 class="section-title">Profile &amp; research focus</h2>
+      <p class="section-sub">Building a career at the intersection of geospatial science, disaster risk reduction, and climate resilience.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card reveal">
+        <p class="lead">Aspiring to build a proficient career in disaster management and climate research, with a focus on GIS and remote sensing applications. Passionate about contributing to innovative solutions addressing environmental challenges and enhancing community resilience.</p>
+        <p class="lead" style="margin-top:14px">Equipped with expertise in GIS &amp; RS, I aim to work collaboratively on impactful projects, leveraging my academic and practical experiences. My goal is to join dynamic organizations where I can apply my skills in research, data analysis, and project management to drive meaningful change and foster sustainable development in vulnerable communities.</p>
+      </div>
+      <div class="reveal">
+        <div class="card">
+          <div class="kv"><span class="k">Full name</span><span>Md Sohan Khan</span></div>
+          <div class="kv"><span class="k">Date of birth</span><span>10 March 2001</span></div>
+          <div class="kv"><span class="k">Nationality</span><span>Bangladeshi</span></div>
+          <div class="kv"><span class="k">Location</span><span>Dhaka, Bangladesh</span></div>
+          <div class="kv"><span class="k">Email</span><span><a href="mailto:sohan31du@gmail.com">sohan31du@gmail.com</a></span></div>
+          <div class="kv"><span class="k">Phone</span><span>(+880) 1720235114 · 1310248013</span></div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <div class="subhead" style="margin:0 0 10px">Research interests</div>
+          <div class="interest-wrap">
+            <span class="tag chip-cyan">Geomorphology</span>
+            <span class="tag chip-cyan">Hydrology</span>
+            <span class="tag chip-cyan">Urban Climate</span>
+            <span class="tag chip-cyan">Disaster Risk Reduction (DRR)</span>
+            <span class="tag chip-cyan">River Morphodynamics &amp; Flood</span>
+            <span class="tag chip-cyan">Water Security</span>
+            <span class="tag chip-cyan">GIS &amp; Remote Sensing</span>
+            <span class="tag chip-cyan">Climate Change</span>
+            <span class="tag chip-cyan">Atmospheric Research</span>
+          </div>
+          <div class="subhead" style="margin:18px 0 10px">Personal interests</div>
+          <div class="interest-wrap">
+            <span class="tag chip-amber">Design &amp; Creativity</span>
+            <span class="tag chip-amber">Volunteering</span>
+            <span class="tag chip-amber">Photography</span>
+            <span class="tag chip-amber">Acquiring New Knowledge</span>
+            <span class="tag chip-amber">Travel &amp; Field Visits</span>
+            <span class="tag chip-amber">Singing</span>
+            <span class="tag chip-amber">Cooking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="bg-grid">
+  <div class="wrap">
+    <div class="mt-head reveal">
+      <span class="eyebrow">Experience</span>
+      <h2 class="section-title">Professional journey</h2>
+      <p class="section-sub">Research, field data collection, and geospatial analysis across leading academic, government, and development institutions.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="reveal">
+        <div class="subhead">Work &amp; Research</div>
+        <div class="timeline">
+          <div class="tl-item cur">
+            <div class="tl-date">22 Jun 2026 – Present</div>
+            <div class="tl-role">Research Associate (RA)</div>
+            <div class="tl-org">Institute of Disaster Management and Vulnerability Studies (IDMVS), University of Dhaka</div>
+            <div class="tl-project">Gender Responsive Health Care System in Bangladesh: Addressing the Dual Burden Challenge of Climate Change and Health Inequities.</div>
+            <ul class="tl-points">
+              <li>EOI preparation, research proposal writing, research design, methodology development, questionnaire development, data analysis and report writing.</li>
+              <li>Field activities: administrative &amp; document preparation, training enumerators, qualitative data collection (FGD, KII, IDI), facility assessment, technical assistance.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">22 Oct 2025 – 21 Jun 2026</div>
+            <div class="tl-role">Junior Research Fellow (JRF)</div>
+            <div class="tl-org">Bangladesh Space Research and Remote Sensing Organization (SPARRSO), Ministry of Defense</div>
+            <div class="tl-detail">Agro and Hydrometeorology Lab, SPARRSO</div>
+            <div class="tl-project">Elucidating the fluvial-geomorphological response mechanism to surrounding landscapes in the transboundary Brahmaputra River in Bangladesh.</div>
+            <ul class="tl-points">
+              <li>Assisted supervisor's project through research design, literature review, methodology design, data collection, analysis and report writing.</li>
+              <li>Planned and executed own research on “Assessment of Spatial Sediment Yield and Its Influence along the Lower Teesta River Basin, Bangladesh.”</li>
+              <li>Prepared Monthly, Annual Progress, Annual Research Completion and Annual Reports for SPARRSO.</li>
+            </ul>
+            <div class="tl-tools"><b>Tools:</b> Google Earth Engine (GEE), Python, Google Colab, InVEST, ArcGIS Pro, GPS</div>
+          </div>
+          <div class="tl-item cur">
+            <div class="tl-date">01 Aug 2025 – Present</div>
+            <div class="tl-role">Executive</div>
+            <div class="tl-org">Give Bangladesh Foundation</div>
+            <ul class="tl-points">
+              <li>Coordinating organizational operations with a focus on documentation, reporting, and project support.</li>
+              <li>Preparing proposals, newsletters, and reports while contributing to strategic communication and stakeholder engagement.</li>
+            </ul>
+            <div class="tl-tools"><b>Focus:</b> Grant proposals, newsletters, reports, press releases</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">01 Jul 2025 – 21 Oct 2025</div>
+            <div class="tl-role">Research Assistant (RA)</div>
+            <div class="tl-org">Bivutivushan Sikder, Assistant Professor — IDMVS, University of Dhaka</div>
+            <ul class="tl-points">
+              <li>Research on climate change, adaptation, disaster management, vulnerability studies and resilience building.</li>
+              <li>Contributed to research papers, reports and presentations for academic and policy audiences.</li>
+              <li>Collaborated with faculty, students and external stakeholders on research methodologies.</li>
+              <li>Managed research databases and project files, ensuring accuracy and ethical compliance.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">16 Mar 2025 – 08 Apr 2025</div>
+            <div class="tl-role">Research Assistant (RA)</div>
+            <div class="tl-org">Sustainable Research and Consultancy Limited (SRCL) | UNDP</div>
+            <ul class="tl-points">
+              <li>Field data collection (FGDs) for UNDP with Pond Sand Filter (PSF) and Reverse Osmosis (RO) users across 10 Upazilas of Satkhira, Khulna and Bagerhat.</li>
+              <li>Key Informant Interviews (KIIs) with Assistant &amp; Sub-Assistant Engineers of DPHE.</li>
+              <li>Reports on drinking water sources, PSF &amp; RO acceptance, gender dynamics, technical feasibility, effluent management and recommendations.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">02 Nov 2024 – 06 Nov 2024</div>
+            <div class="tl-role">Research Assistant (RA)</div>
+            <div class="tl-org">Bangladesh Disaster Preparedness Centre (BDPC) | BRAC</div>
+            <div class="tl-project">Training Needs Assessment of Local Disaster Management Committees.</div>
+            <ul class="tl-points">
+              <li>Field data collection for BRAC on UDMC and WDMC in Jamalpur District.</li>
+              <li>Training Need Assessment (TNA) for UDMC &amp; WDMC members through FGD and KII and prepared reports.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">11 Jul 2023 – 29 Nov 2023</div>
+            <div class="tl-role">Intern</div>
+            <div class="tl-org">GIS &amp; Remote Sensing Division, Center for Environmental and Geographic Information Services (CEGIS)</div>
+            <ul class="tl-points">
+              <li>Gathered historical land use data, satellite imagery and demographic information.</li>
+              <li>Supported mapping &amp; spatial analysis and prepared comprehensive reports on riverbank erosion.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">10 Jul 2023 – 30 Dec 2023</div>
+            <div class="tl-role">Research Assistant (RA)</div>
+            <div class="tl-org">Dr. Maksudur Rahman, Professor — Dept. of Geography &amp; Environment, University of Dhaka</div>
+            <div class="tl-project">BRAC NDC Review Project (CRHI at Coastal Zone).</div>
+            <ul class="tl-points">
+              <li>Key Informant Interviews (KII) to gather qualitative insights from stakeholders.</li>
+              <li>Transcribed and analyzed qualitative data to derive actionable findings on CRHI in the coastal zone.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">09 Jul 2023 – 30 Sep 2023</div>
+            <div class="tl-role">Teaching Assistant (TA)</div>
+            <div class="tl-org">GIS Lab, IDMVS, University of Dhaka</div>
+            <div class="tl-detail">DMC 305: Geographic Information System (Lab)</div>
+            <ul class="tl-points">
+              <li>Technical expertise in GIS &amp; geospatial tools, software and databases for research and projects.</li>
+              <li>Software solutions to students including ArcGIS, ArcGIS Pro and other GIS applications.</li>
+            </ul>
+          </div>
+          <div class="tl-item cur">
+            <div class="tl-date">01 Apr 2023 – Present</div>
+            <div class="tl-role">Deputy Coordinator &amp; Design Head</div>
+            <div class="tl-org">HQ Operations Team, Give Bangladesh Foundation</div>
+            <ul class="tl-points">
+              <li>Leading creation of professional designs for reports, newsletters and project proposals.</li>
+              <li>Supporting cross-functional teams, mentoring members and coordinating documentation to meet deadlines.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">25 Aug 2022 – 30 Aug 2022</div>
+            <div class="tl-role">Data Enumerator and Analyst</div>
+            <div class="tl-org">Gender Responsive Resilience &amp; Intersectionality in Policy &amp; Practice (GRRIPP) | South Asia</div>
+            <ul class="tl-points">
+              <li>In-depth interviews on flash-flood impacts in north-east Bangladesh with a focus on gender and intersectionality.</li>
+              <li>Analyzed and synthesized data into reports to guide gender-responsive and inclusive policies.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">04 Jan 2022 – 30 Jul 2022</div>
+            <div class="tl-role">Instructor</div>
+            <div class="tl-org">MIT Coaching Center, Malibagh</div>
+            <div class="tl-detail">Geography, Economics, General Science, English</div>
+            <ul class="tl-points">
+              <li>Interactive classes, simplifying complex topics and providing personalized support.</li>
+              <li>Guided students in exam preparation through targeted practice, progress monitoring and counseling.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">05 Sep 2020 – 20 Sep 2020</div>
+            <div class="tl-role">Data Enumerator</div>
+            <div class="tl-org">United Nations International Children's Emergency Fund (UNICEF)</div>
+            <ul class="tl-points">
+              <li>Remote field data collection to verify beneficiaries for the Flood Anticipatory Action program (CERF 2021) in Northern Bangladesh.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="subhead">Volunteering &amp; Leadership</div>
+        <div class="timeline">
+          <div class="tl-item cur">
+            <div class="tl-date">03 Feb 2025 – Present</div>
+            <div class="tl-role">Advisor and Instructor</div>
+            <div class="tl-org">IDMVS Students Forum, University of Dhaka</div>
+            <ul class="tl-points">
+              <li>Mentor students on academic and professional development in disaster management, including GIS and creative methodologies.</li>
+              <li>Conduct workshops on GIS techniques, data visualization and creative tools.</li>
+            </ul>
+          </div>
+          <div class="tl-item cur">
+            <div class="tl-date">16 Nov 2024 – Present</div>
+            <div class="tl-role">Member</div>
+            <div class="tl-org">YouthMappers, University of Dhaka Chapter</div>
+            <ul class="tl-points">
+              <li>Contributed to OpenStreetMap by mapping vulnerable areas and critical infrastructure for disaster management.</li>
+              <li>Participated in workshops and collaborated with global YouthMappers chapters.</li>
+            </ul>
+          </div>
+          <div class="tl-item cur">
+            <div class="tl-date">26 Nov 2022 – Present</div>
+            <div class="tl-role">Volunteer</div>
+            <div class="tl-org">Give Bangladesh Foundation</div>
+            <ul class="tl-points">
+              <li>Event planning, fieldwork and community outreach to support social impact projects and implementation.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">07 Aug 2021 – 20 Dec 2022</div>
+            <div class="tl-role">Volunteer</div>
+            <div class="tl-org">Disaster Management Studio, IDMVS, University of Dhaka</div>
+            <ul class="tl-points">
+              <li>Served as R&amp;D member to plan and implement research programmes.</li>
+              <li>Organized workshops, seminars and training on disaster risk reduction and response.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">15 Oct 2019 – 30 Sep 2023</div>
+            <div class="tl-role">Information &amp; Technology (IT) Secretary</div>
+            <div class="tl-org">School of Ghasful, University of Dhaka</div>
+            <ul class="tl-points">
+              <li>Designed and managed ID cards, certificates and digital assets to streamline administration.</li>
+              <li>Maintained and updated the organization's database and event management records.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:6px">
+          <div class="subhead" style="margin:0 0 12px">Conferences &amp; Conventions</div>
+          <div class="tl-date">13–14 Dec 2025</div>
+          <div class="tl-role" style="font-size:15px">National Coastal Convention 2025</div>
+          <div class="tl-org">Participatory Research &amp; Action Network (PRAAN), Bangladesh Military Museum</div>
+          <p class="award-desc">Participated on behalf of Give Bangladesh Foundation, a youth partner of PRAAN.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESEARCH ===================== -->
+<section id="research">
+  <div class="wrap">
+    <div class="mt-head reveal">
+      <span class="eyebrow">Research &amp; Publications</span>
+      <h2 class="section-title">Selected works</h2>
+      <p class="section-sub">Peer-reviewed articles, working papers, technical reports, and conference posters across river geomorphology, climate, and water security.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="subhead">Journal Articles &amp; Working Papers <span class="pub-count">(12)</span></div>
+      <ol class="pub-list">
+        <li><span class="num">01</span><span>Azad, R. A., Fahim, T. C., Bhattacharjee, B., <b>Khan, M. S.</b> &amp; Shuvo, S. R. (2026). Water insecurity in multi-ethnic communities of the Chittagong Hill Tracts, Bangladesh. <i>Natural Hazards</i> [Submitted].</span></li>
+        <li><span class="num">02</span><span>Bhattacharjee, B., Sikder, B. B., Fahim, T. C., <b>Khan, M. S.</b> &amp; Islam, A. (2026). Climate-induced internal displacement in coastal Bangladesh: Socioeconomic vulnerabilities and spatiotemporal dynamics. <i>Natural Hazards, 122</i>(218).</span></li>
+        <li><span class="num">03</span><span>Jihan, M. A. T., Popy, S., Rasul, G., <b>Khan, M. S.</b> &amp; Sheikh, N. (2026). Evaluation of NEX-GDDP–CMIP6 multi-model (29 GCMs): Historical and future climate variability and extremes in South Asia (1951–2100). <i>Scientific Reports</i> [Under Review].</span></li>
+        <li><span class="num">04</span><span><b>Khan, M. S.</b> &amp; Faisal, B. M. R. (2026). Assessment of sediment yield at lower Teesta River Basin of Bangladesh using geospatial technique. <i>Journal of Mountain Science</i> [Submitted].</span></li>
+        <li><span class="num">05</span><span><b>Khan, M. S.</b>, Sikder, B. B., Madhubi, J. J., Bhattacharjee, B., Roy, B., Shuvo, S. R., Shammu, I. J., Rajon, T. M. &amp; Shahrujjaman, S. M. (2026). Influence of hydrogeological factors on Jamuna riverbank erosion in Sirajganj, Bangladesh [Working Paper].</span></li>
+        <li><span class="num">06</span><span>Mondal, B. K., Sikder, B. B., Bhattacharjee, B., Shahrujjaman, S. M. &amp; <b>Khan, M. S.</b> (2026). Water security challenges in coastal Bangladesh: A multi-dimensional approach. <i>Sustainable Water Resources Management, 12</i>(28).</span></li>
+        <li><span class="num">07</span><span>Rahman, S. S., <b>Khan, M. S.</b>, Maruf, M. S. H., Taiba, S. T., Hasan, M. Y. &amp; Kafy, A. A. (2025). Remote sensing-based temporal and regression analysis of temperature and rainfall trends integrating ERA-5 and CHIRPS data. <i>Remote Sensing Applications: Society and Environment</i> [Submitted].</span></li>
+        <li><span class="num">08</span><span>Rajon, T. M., <b>Khan, M. S.</b> &amp; Shammu, I. J. (2026). Sleep quality and psychological distress among undergraduate students of a Bangladeshi university [Working Paper].</span></li>
+        <li><span class="num">09</span><span>Rasul, G., Jihan, M. A. T., <b>Khan, M. S.</b>, Sheikh, N. &amp; Popy, S. (2025). SHAP-driven machine learning approaches for LST modeling using surface indices in Chuadanga. <i>Scientific Reports</i> [Under Review].</span></li>
+        <li><span class="num">10</span><span>Rasul, G., <b>Khan, M. S.</b>, Shammu, I. J., Sheikh, N. &amp; Jihan, M. A. T. (2026). Impact of land use and land cover changes on urban ecosystem service value in Khulna City Corporation, Bangladesh [Working Paper].</span></li>
+        <li><span class="num">11</span><span>Shahrujjaman, S. M., Sikder, B. B., Zahid, D. &amp; <b>Khan, M. S.</b> (2025). Knowledge, attitude and preparedness to respond to heat wave among informal workers in Dhaka, Bangladesh. <i>Progress in Disaster Science, 26</i>, 100436.</span></li>
+        <li><span class="num">12</span><span>Sikder, B. B., <b>Khan, M. S.</b>, Bhattacharjee, B., Roy, B., Chowdhury, A., Sarker, S. K. &amp; Karmaker, S. C. (2026). Spatiotemporal dynamics and predictive modeling of climatic trends in Bangladesh using NASA Power dataset [Working Paper].</span></li>
+      </ol>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-top:34px">
+      <div>
+        <div class="subhead">Reports &amp; Theses</div>
+        <ol class="pub-list">
+          <li><span class="num">•</span><span><b>Khan, M. S.</b> (2025). Spatiotemporal Analysis of Jamuna River Channel Shifting and Its Impacts on Riverine Communities: A Study on Kazipur, Sirajganj [Master's Thesis]. IDMVS, University of Dhaka.</span></li>
+          <li><span class="num">•</span><span><b>Khan, M. S.</b> (2024). Assessment of Bankline Shifting, Changes in Land Use &amp; Land Cover, and Impacts of Jamuna Riverbank Erosion: A GIS and Remote Sensing Study in Chauhali Upazila, Sirajganj [Undergraduate Internship Report]. IDMVS, University of Dhaka / CEGIS.</span></li>
+          <li><span class="num">•</span><span>Jesmin, J., Sadiya, I., Sayma, T., <b>Khan, M. S.</b>, et al. (2026, Feb). Annual Report 2025. Give Bangladesh Foundation.</span></li>
+          <li><span class="num">•</span><span>Mumun, T., <b>Khan, M. S.</b>, et al. (2025). Annual Report 2024. Give Bangladesh Foundation.</span></li>
+          <li><span class="num">•</span><span>Mumun, T., <b>Khan, M. S.</b>, Antar, F. A. S., Islam, F. (2024). Annual Report 2023. Give Bangladesh Foundation.</span></li>
+        </ol>
+      </div>
+      <div>
+        <div class="subhead">Posters &amp; Presentations</div>
+        <ol class="pub-list">
+          <li><span class="num">•</span><span><b>Khan, M. S.</b> &amp; Faisal, B. M. R. (2026, Jan 25). Assessment of soil erosion using geospatial techniques: A case of the lower Teesta River Basin, Bangladesh [Poster]. Research Fair &amp; Career Festival, Faculty of Earth and Environmental Science, University of Dhaka.</span></li>
+          <li><span class="num">•</span><span><b>Khan, M. S.</b> &amp; Faisal, B. M. R. (2026, Apr 11). Assessment of sediment yield using geospatial techniques: A case of the lower Teesta River Basin, Bangladesh [Poster]. National Seminar on Climate &amp; Disaster Resilience, IDMVS, University of Dhaka.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section id="education" class="bg-grid">
+  <div class="wrap">
+    <div class="mt-head reveal">
+      <span class="eyebrow">Education</span>
+      <h2 class="section-title">Academic background</h2>
+      <p class="section-sub">Specialized study in disaster management at the University of Dhaka, with a strong foundation in science and humanities.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card reveal edu-item">
+        <div>
+          <div class="edu-date">August 2025</div>
+          <h3 style="font-size:18px;margin:6px 0 4px">Masters of Disaster Management (MDM)</h3>
+          <div class="tl-org">University of Dhaka</div>
+          <div class="tl-detail">Nilkhet Road, Ramna, Dhaka 1000</div>
+        </div>
+        <div class="edu-grade"><div class="g">3.86</div><div class="tl-org">/ 4.00</div></div>
+      </div>
+      <div class="card reveal edu-item">
+        <div>
+          <div class="edu-date">January 2024</div>
+          <h3 style="font-size:18px;margin:6px 0 4px">Bachelor of Disaster Management (BDM)</h3>
+          <div class="tl-org">University of Dhaka</div>
+          <div class="tl-detail">Nilkhet Road, Ramna, Dhaka 1000</div>
+        </div>
+        <div class="edu-grade"><div class="g">3.67</div><div class="tl-org">/ 4.00</div></div>
+      </div>
+      <div class="card reveal edu-item">
+        <div>
+          <div class="edu-date">2018</div>
+          <h3 style="font-size:18px;margin:6px 0 4px">Higher Secondary Certificate (H.S.C.)</h3>
+          <div class="tl-org">Govt. H.S.S. College, Magura — Humanities</div>
+          <div class="tl-detail">Magura 7600</div>
+        </div>
+        <div class="edu-grade"><div class="g">4.75</div><div class="tl-org">/ 5.00</div></div>
+      </div>
+      <div class="card reveal edu-item">
+        <div>
+          <div class="edu-date">February 2016</div>
+          <h3 style="font-size:18px;margin:6px 0 4px">Secondary School Certificate (S.S.C.)</h3>
+          <div class="tl-org">H.B.D.A. Ali Secondary School — Science</div>
+          <div class="tl-detail">Jhenidah 7351</div>
+        </div>
+        <div class="edu-grade"><div class="g">4.89</div><div class="tl-org">/ 5.00</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills">
+  <div class="wrap">
+    <div class="mt-head reveal">
+      <span class="eyebrow">Skills &amp; Expertise</span>
+      <h2 class="section-title">Technical toolkit</h2>
+      <p class="section-sub">Geospatial analysis, programming, research methods, design, and multilingual communication.</p>
+    </div>
+
+    <div class="grid-3 reveal">
+      <div class="card">
+        <div class="skill-cat"><span>◆</span> Spatial Analysis</div>
+        <div class="interest-wrap">
+          <span class="tag">ArcGIS Pro</span><span class="tag">ArcGIS (ArcMap)</span><span class="tag">Google Earth Engine</span><span class="tag">QGIS</span><span class="tag">Google Earth Pro</span><span class="tag">OpenStreetMap</span><span class="tag">GPS Mapping</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="skill-cat"><span>◆</span> Programming &amp; Statistics</div>
+        <div class="interest-wrap">
+          <span class="tag">Python</span><span class="tag">Google Colab</span><span class="tag">PyCharm</span><span class="tag">SPSS</span><span class="tag">Jamovi</span><span class="tag">R</span><span class="tag">InVEST</span><span class="tag">Mermaid</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="skill-cat"><span>◆</span> Research</div>
+        <div class="interest-wrap">
+          <span class="tag">Literature Review</span><span class="tag">Methodology Development</span><span class="tag">Data Analysis</span><span class="tag">Proposal &amp; Report Writing</span><span class="tag">EOI Writing</span><span class="tag">Inception Report</span><span class="tag">Budgeting</span><span class="tag">Questionnaire Development</span><span class="tag">Field Supervision</span><span class="tag">Transcribing</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="skill-cat"><span>◆</span> Office Applications</div>
+        <div class="interest-wrap">
+          <span class="tag">MS Office 365</span><span class="tag">MS Word</span><span class="tag">LaTeX</span><span class="tag">MS Excel</span><span class="tag">PowerPoint</span><span class="tag">Outlook</span><span class="tag">Teams</span><span class="tag">Google Suite</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="skill-cat"><span>◆</span> Graphic Design &amp; Video</div>
+        <div class="interest-wrap">
+          <span class="tag">Adobe Illustrator</span><span class="tag">Adobe Photoshop</span><span class="tag">Canva</span><span class="tag">Affinity</span><span class="tag">Figma</span><span class="tag">Premiere Pro</span><span class="tag">DaVinci Resolve</span><span class="tag">iMovie</span><span class="tag">CapCut</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="skill-cat"><span>◆</span> Referencing &amp; Data Collection</div>
+        <div class="interest-wrap">
+          <span class="tag">Zotero</span><span class="tag">Mendeley</span><span class="tag">EndNote</span><span class="tag">Mybib</span><span class="tag">KoboToolbox</span><span class="tag">Mapillary</span><span class="tag">Photography</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-top:24px">
+      <div class="card">
+        <div class="subhead" style="margin:0 0 16px">Languages</div>
+        <div class="lang-bar">
+          <div class="lang-name"><b>Bengali</b><span class="lv">Native</span></div>
+          <div class="lang-levels">Mother tongue · Native proficiency</div>
+        </div>
+        <hr class="divider" style="margin:14px 0">
+        <div class="lang-bar">
+          <div class="lang-name"><b>English</b><span class="lv">C1 – C2</span></div>
+          <div class="lang-levels">Listening C1 · Reading C2 · Spoken Prod. B2 · Interaction C1 · Writing C2</div>
+        </div>
+        <hr class="divider" style="margin:14px 0">
+        <div class="lang-bar">
+          <div class="lang-name"><b>Spanish</b><span class="lv">B1 – C1</span></div>
+          <div class="lang-levels">Listening B2 · Reading C1 · Spoken Prod. B1 · Interaction B1 · Writing B2</div>
+        </div>
+        <hr class="divider" style="margin:14px 0">
+        <div class="lang-bar">
+          <div class="lang-name"><b>Hindi</b><span class="lv">B2 – C1</span></div>
+          <div class="lang-levels">Listening C1 · Writing B2 · Spoken Prod. B2</div>
+        </div>
+        <div class="subhead" style="margin:22px 0 12px">Soft skills</div>
+        <div class="interest-wrap">
+          <span class="tag chip-amber">Communication</span><span class="tag chip-amber">Adaptability</span><span class="tag chip-amber">Time Management</span><span class="tag chip-amber">Risk Management</span><span class="tag chip-amber">Teamwork</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="subhead" style="margin:0 0 16px">Training &amp; Certifications</div>
+        <ul class="train-list">
+          <li><span class="yr">2026</span><span>Spanish Elementary Course <span class="org">— IML, University of Dhaka</span></span></li>
+          <li><span class="yr">2025</span><span>Graphic Design: A Canva Guide — Advanced <span class="org">— Give Bangladesh Foundation</span></span></li>
+          <li><span class="yr">2025</span><span>Graphic Design: A Canva Guide <span class="org">— Give Bangladesh Foundation</span></span></li>
+          <li><span class="yr">2025</span><span>Fundamentals of GIS <span class="org">— UC Davis (Coursera)</span></span></li>
+          <li><span class="yr">2025</span><span>Data Analysis with Python <span class="org">— IBM (Coursera)</span></span></li>
+          <li><span class="yr">2023</span><span>OSM Validation using JOSM <span class="org">— YouthMappers International</span></span></li>
+          <li><span class="yr">2023</span><span>Adobe Illustrator Basic Course <span class="org">— Give Bangladesh Foundation</span></span></li>
+          <li><span class="yr">2022</span><span>Introduction to GIS Mapping <span class="org">— University of Toronto (Coursera)</span></span></li>
+          <li><span class="yr">2022</span><span>ArcGIS Pro Basics &amp; GIS Basics <span class="org">— ESRI</span></span></li>
+          <li><span class="yr">2022</span><span>Presentation &amp; Public Speaking; Fire Safety <span class="org">— 10 Minute School</span></span></li>
+          <li><span class="yr">2022</span><span>Fire Safety Awareness &amp; Training <span class="org">— BFSCD</span></span></li>
+          <li><span class="yr">2020</span><span>Excel Skills for Business: Essentials <span class="org">— Macquarie University (Coursera)</span></span></li>
+          <li><span class="yr">2020</span><span>Structuring Machine Learning Projects <span class="org">— DeepLearning.AI (Coursera)</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AWARDS ===================== -->
+<section id="awards" class="bg-grid">
+  <div class="wrap">
+    <div class="mt-head reveal">
+      <span class="eyebrow">Honors</span>
+      <h2 class="section-title">Grants, fellowships &amp; achievements</h2>
+      <p class="section-sub">Competitive research fellowships and recognition across academics, creativity, and volunteering.</p>
+    </div>
+    <div class="grid-2">
+      <div class="reveal">
+        <div class="subhead">Grants &amp; Fellowships</div>
+        <div class="card" style="display:grid;gap:22px">
+          <div class="award-item">
+            <div class="award-title">SPARRSO Fellowship 2025-26</div>
+            <div class="award-org">Bangladesh Space Research and Remote Sensing Organization (SPARRSO), MoD</div>
+            <div class="award-date">15 Oct 2025 – 21 Jun 2026</div>
+            <p class="award-desc">Awarded for research on flood risk assessment and river channel shifting using remote sensing in flood-prone north-western Bangladesh. Research: “Assessment of Spatial Sediment Yield and Its Influence along the Lower Teesta River Basin, Bangladesh.”</p>
+          </div>
+          <div class="award-item">
+            <div class="award-title">National Science &amp; Technology (NST) Fellowship 2024-25</div>
+            <div class="award-org">Ministry of Science and Technology (MoST), Government of Bangladesh</div>
+            <div class="award-date">01 Jul 2024 – 30 Jun 2025</div>
+            <p class="award-desc">Awarded for MS thesis research on the extent and impacts of river channel shifting and remote sensing applications in riverbank erosion-prone north-western Bangladesh. Thesis: “Spatiotemporal Analysis of Jamuna River Channel Shifting and Its Impacts on Riverine Communities: A Study on Kazipur, Sirajganj.”</p>
+          </div>
+          <div class="award-item">
+            <div class="award-title">DU Postgraduation Scholarship (General) 2024-25</div>
+            <div class="award-org">University of Dhaka</div>
+            <div class="award-date">02 Feb 2025</div>
+            <p class="award-desc">Recognition based on good conduct, regular attendance and satisfactory academic progress during the undergraduate level (2019–2022).</p>
+          </div>
+          <div class="award-item">
+            <div class="award-title">Junior School Certificate (JSC) Scholarship (General)</div>
+            <div class="award-org">Board of Secondary and Higher Secondary Education, Jessore</div>
+            <div class="award-date">01 Mar 2014</div>
+            <p class="award-desc">Recognition based on satisfactory academic results in the JSC Exam (2013).</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="subhead">Achievements &amp; Recognition</div>
+        <div class="card" style="display:grid;gap:18px">
+          <div class="award-item amber">
+            <div class="award-title">3rd — Beat the Heat: Student Heat Action Contest 2025</div>
+            <div class="award-org">Bangladesh Red Crescent Society (IFRC &amp; American Red Cross)</div>
+            <div class="award-date">28 Jun 2025 · Intra-University Photography Contest</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">10th 35AWARDS International Photography Award</div>
+            <div class="award-org">35AWARDS — Participation Certificate</div>
+            <div class="award-date">01 Jun 2025</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">Top 6% Best Photos — Winged Insects contest</div>
+            <div class="award-org">35AWARDS</div>
+            <div class="award-date">08 Apr 2025</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">Volunteer of the Month (VoM), Feb 2025</div>
+            <div class="award-org">Give Bangladesh Foundation</div>
+            <div class="award-date">Feb 2025</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">“A Dedicated Difference-Maker: Coolest One” Award</div>
+            <div class="award-org">Give Bangladesh Foundation</div>
+            <div class="award-date">27 Dec 2024 · For consistent efforts throughout 2024</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">Volunteer of the Month (VoM), Feb 2024</div>
+            <div class="award-org">Give Bangladesh Foundation</div>
+            <div class="award-date">Feb 2024</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">Champion — Basics of Adobe Illustrator</div>
+            <div class="award-org">Give Bangladesh Foundation</div>
+            <div class="award-date">23 Jul 2023</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">Introduction to GIS Mapping — 99.24%</div>
+            <div class="award-org">University of Toronto (Coursera)</div>
+            <div class="award-date">23 Nov 2022</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">Participant — Centennial Photography Competition 2021</div>
+            <div class="award-org">University of Dhaka</div>
+            <div class="award-date">06 Oct 2021</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">2nd — Music Competition (Nazrul Sangeet)</div>
+            <div class="award-org">Inter-Upazila Cultural Fest</div>
+            <div class="award-date">2014</div>
+          </div>
+          <div class="award-item amber">
+            <div class="award-title">1st — Drawing Competition</div>
+            <div class="award-org">Primary School</div>
+            <div class="award-date">2011</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="mt-head reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title">Let's collaborate</h2>
+      <p class="section-sub">Open to research collaborations, fellowships, and opportunities in disaster management, GIS &amp; remote sensing, and climate resilience.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="card reveal">
+        <div class="subhead" style="margin:0 0 8px">Get in touch</div>
+        <div class="contact-row"><span class="k">Email</span><a href="mailto:sohan31du@gmail.com">sohan31du@gmail.com</a></div>
+        <div class="contact-row"><span class="k">Phone</span><span><a href="tel:+8801720235114">(+880) 1720235114</a> · <a href="tel:+8801310248013">1310248013</a></span></div>
+        <div class="contact-row"><span class="k">Location</span><span>Dhaka, Bangladesh</span></div>
+        <div class="contact-row"><span class="k">Address</span><span>Flat #4/A, House #43/1, Sakura Mansion, Nabab Katara Lane, Chankharpul, Bongshal, Dhaka–1100</span></div>
+        <div class="subhead" style="margin:22px 0 12px">Find me online</div>
+        <div class="socials">
+          <a class="social" href="https://www.linkedin.com/in/sohan-khan" target="_blank" rel="noopener"><span class="lbl">LinkedIn</span><span class="hnd">in/sohan-khan</span></a>
+          <a class="social" href="https://sohan-khan31.github.io/" target="_blank" rel="noopener"><span class="lbl">GitHub</span><span class="hnd">sohan-khan31.github.io</span></a>
+          <a class="social" href="https://scholar.google.com/citations?user=MdSohanKhan" target="_blank" rel="noopener"><span class="lbl">Google Scholar</span><span class="hnd">Md Sohan Khan</span></a>
+          <a class="social" href="https://www.researchgate.net/profile/Md-Khan-311" target="_blank" rel="noopener"><span class="lbl">ResearchGate</span><span class="hnd">Md-Khan-311</span></a>
+          <a class="social" href="https://orcid.org/0000-0001-8517-9588" target="_blank" rel="noopener"><span class="lbl">ORCID</span><span class="hnd">0000-0001-8517-9588</span></a>
+          <a class="social" href="https://www.facebook.com/sohan.31t" target="_blank" rel="noopener"><span class="lbl">Facebook</span><span class="hnd">sohan.31t</span></a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="subhead">References</div>
+        <div class="grid-2" style="gap:14px">
+          <div class="ref-card">
+            <h4>Dilara Zahid, PhD</h4>
+            <div class="role">Associate Professor</div>
+            <div class="org">IDMVS, University of Dhaka</div>
+            <div class="cta"><a href="tel:+8801726266666">+8801726266666</a><a href="mailto:dilarazahid@du.ac.bd">dilarazahid@du.ac.bd</a></div>
+          </div>
+          <div class="ref-card">
+            <h4>Bivutivushan Sikder</h4>
+            <div class="role">Assistant Professor</div>
+            <div class="org">IDMVS, University of Dhaka</div>
+            <div class="cta"><a href="tel:+8801717342625">+8801717342625</a><a href="mailto:bbs@du.ac.bd">bbs@du.ac.bd</a></div>
+          </div>
+          <div class="ref-card">
+            <h4>Dr. B. M. Refat Faisal</h4>
+            <div class="role">Principal Scientific Officer (PSO)</div>
+            <div class="org">Agro &amp; Hydro Meteorology Division, SPARRSO</div>
+            <div class="cta"><a href="tel:+8801919491335">+8801919491335</a><a href="mailto:refatfaisal@yahoo.com">refatfaisal@yahoo.com</a></div>
+          </div>
+          <div class="ref-card">
+            <h4>Md. Saifullah Mithu</h4>
+            <div class="role">Co-Founder and President</div>
+            <div class="org">Give Bangladesh Foundation</div>
+            <div class="cta"><a href="tel:+8801819230486">+8801819230486</a><a href="mailto:saif.mithu@gmail.com">saif.mithu@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© <span id="year"></span> Md Sohan Khan · Disaster Management Researcher</div>
+    <div>Dhaka, Bangladesh · <a href="mailto:sohan31du@gmail.com" style="color:var(--primary)">sohan31du@gmail.com</a></div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  var menuBtn = document.getElementById('menuBtn');
+  var navlinks = document.getElementById('navlinks');
+  menuBtn.addEventListener('click', function () { navlinks.classList.toggle('open'); });
+  navlinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { navlinks.classList.remove('open'); });
+  });
+
+  // Scroll reveal
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
