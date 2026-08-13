@@ -9,7 +9,7 @@ export const profile = {
   dob: "10 March 2001",
   nationality: "Bangladeshi",
   email: "sohan31du@gmail.com",
-  phones: ["(+880) 1720235114", "(+880) 1310248013"],
+  phones: ["(+880) 1346066410", "(+880) 1310248013"],
   address:
     "Flat #4/A, House #43/1, Sakura Mansion, Nabab Katara Lane, Chankharpul, Bongshal, Dhaka–1100, Bangladesh",
   summary:
@@ -127,7 +127,7 @@ export const experience: ExperienceItem[] = [
   },
   {
     role: "Research Assistant (RA)",
-    org: "Bivutivushan Sikder, Assistant Professor — IDMVS, University of Dhaka",
+    org: "Bivuti Bhushan Sikder, Assistant Professor — IDMVS, University of Dhaka",
     date: "01 Jul 2025 – 21 Oct 2025",
     points: [
       "Assisted in research on climate change, adaptation, disaster management, vulnerability studies, and resilience building.",
