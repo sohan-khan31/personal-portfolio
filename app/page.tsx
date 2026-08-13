@@ -6,6 +6,7 @@ import { ResearchSection } from "@/components/sections/research-section"
 import { EducationSection } from "@/components/sections/education-section"
 import { SkillsSection } from "@/components/sections/skills-section"
 import { AwardsSection } from "@/components/sections/awards-section"
+import { ProjectsSection } from "@/components/sections/projects-section"
 import { ContactSection, SiteFooter } from "@/components/sections/contact-section"
 
 export default function Page() {
@@ -20,6 +21,7 @@ export default function Page() {
         <EducationSection />
         <SkillsSection />
         <AwardsSection />
+        <ProjectsSection />
         <ContactSection />
       </main>
       <SiteFooter />
