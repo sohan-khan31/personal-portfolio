@@ -511,6 +511,7 @@ export const researchInterests = [
   "GIS & Remote Sensing",
   "Climate Change",
   "Atmospheric Research",
+  "Displacement",
 ]
 
 export const personalInterests = [
@@ -578,5 +579,6 @@ export const navItems = [
   { id: "education", label: "Education" },
   { id: "skills", label: "Skills" },
   { id: "awards", label: "Awards" },
+  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ]
