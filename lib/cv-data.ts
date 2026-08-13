@@ -9,7 +9,7 @@ export const profile = {
   dob: "10 March 2001",
   nationality: "Bangladeshi",
   email: "sohan31du@gmail.com",
-  phones: ["(+880) 1720235114", "(+880) 1310248013"],
+  phones: ["(+880) 1346066410", "(+880) 1310248013"],
   address:
     "Flat #4/A, House #43/1, Sakura Mansion, Nabab Katara Lane, Chankharpul, Bongshal, Dhaka–1100, Bangladesh",
   summary:
@@ -17,9 +17,9 @@ export const profile = {
 }
 
 export const stats = [
-  { value: "3.86", label: "Master's CGPA", sub: "out of 4.00" },
-  { value: "12+", label: "Journal & working papers", sub: "authored / co-authored" },
-  { value: "10+", label: "Research roles", sub: "across leading institutions" },
+  { value: "3.86", label: "Master's CGPA", sub: "Out of 4.00" },
+  { value: "12+", label: "Journal & working papers", sub: "Authored / co-authored" },
+  { value: "10+", label: "Research roles", sub: "Across leading institutions" },
   { value: "2", label: "Competitive fellowships", sub: "SPARRSO & NST" },
 ]
 
