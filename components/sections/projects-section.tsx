@@ -21,7 +21,7 @@ function TimelineNode({ current }: { current?: boolean }) {
   )
 }
 
-function ProjectsCard({ item }: { item: ProjectsItem }) {
+function WorkCard({ item }: { item: ProjectsItem }) {
   return (
     <div className="relative border-l border-border pb-10 pl-8 last:pb-0">
       <TimelineNode current={item.current} />
@@ -82,7 +82,7 @@ export function ProjectsSection() {
 
         <Reveal className="max-w-3xl">
           {projects.map((item, i) => (
-            <ProjectsCard key={i} item={item} />
+            <WorkCard key={i} item={item} />
           ))}
         </Reveal>
       </div>
