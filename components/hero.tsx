@@ -76,13 +76,16 @@ export function Hero() {
           <div className="relative aspect-square rounded-2xl border border-border bg-card/50 p-8 backdrop-blur-sm">
             <div className="absolute inset-0 rounded-2xl bg-grid opacity-40" />
             <div className="relative flex h-full flex-col items-center justify-center">
-              <div className="flex h-32 w-32 items-center justify-center rounded-full border border-primary/40 bg-primary/10 sm:h-36 sm:w-36">
-                <img
-          src="/asset/profile.jpg"
-          alt={profile.name}
-          className="h-full w-full object-cover"
-        />
-              </div>
+              <div className="relative h-32 w-32 overflow-hidden rounded-full border border-primary/40 bg-primary/10 sm:h-36 sm:w-36">
+              <Image
+              src="/asset/profile.jpg"
+              alt={profile.name || "Profile photo"}
+              fill
+              priority
+              className="object-cover"
+              sizes="144px"
+              />
+          </div>
               <p className="mt-6 text-center font-display text-sm font-semibold tracking-tight">
                 Md Sohan Khan
               </p>
