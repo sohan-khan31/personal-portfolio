@@ -17,9 +17,9 @@ export const profile = {
 }
 
 export const stats = [
-  { value: "3.86", label: "Master's CGPA", sub: "out of 4.00" },
-  { value: "12+", label: "Journal & working papers", sub: "authored / co-authored" },
-  { value: "10+", label: "Research roles", sub: "across leading institutions" },
+  { value: "3.86", label: "Master's CGPA", sub: "Out of 4.00" },
+  { value: "12+", label: "Journal & working papers", sub: "Authored / co-authored" },
+  { value: "10+", label: "Research roles", sub: "Across leading institutions" },
   { value: "2", label: "Competitive fellowships", sub: "SPARRSO & NST" },
 ]
 
@@ -30,6 +30,8 @@ export const socials = [
   { label: "ResearchGate", handle: "Md-Khan-311", href: "https://www.researchgate.net/profile/Md-Khan-311" },
   { label: "ORCID", handle: "0000-0001-8517-9588", href: "https://orcid.org/0000-0001-8517-9588" },
   { label: "Facebook", handle: "sohan.31t", href: "https://www.facebook.com/sohan.31t" },
+  { label: "Instagram", handle: "sohan.31t", href: "https://www.instagram.com/sohan.31t" },
+  { label: "YouTube", handle: "@khan3131t", href: "https://www.youtube.com/@khan3131t" },
 ]
 
 export type EducationItem = {
@@ -73,6 +75,22 @@ export const education: EducationItem[] = [
     location: "Jhenidah 7351, Bangladesh",
     date: "February 2016",
     grade: "GPA 4.89 / 5.00",
+  },
+  {
+    degree: "Junior School Certificate (J.S.C.)",
+    field: "N/A",
+    institution: "H.B.D.A. Ali Secondary School",
+    location: "Jhenidah 7351, Bangladesh",
+    date: "December 2013",
+    grade: "GPA 5.00 / 5.00",
+  },
+  {
+    degree: "Primary School Certificate (P.S.C.)",
+    field: "N/A",
+    institution: "35 No. Jattrapur Government Primary School",
+    location: "Chowgachha 7451, Bangladesh",
+    date: "December 2010",
+    grade: "1st Division (Score 538 / 600)",
   },
 ]
 
@@ -397,6 +415,33 @@ export const achievements: AwardItem[] = [
     title: "1st Position — Drawing Competition",
     org: "Primary School",
     date: "2011",
+  },
+]
+
+export type ProjectsItem = {
+  project: string
+  org: string
+  fund: string
+  detail?: string
+  date: string
+  role: string
+  current?: boolean
+  points: string[]
+  tools?: string
+}
+
+export const projects: ProjectsItem[] = [
+  {
+    project: "Gender Responsive Health Care System in Bangladesh: Addressing the Dual Burden Challenge of Climate Change and Health Inequities",
+    org: "Institute of Disaster Management and Vulnerability Studies, University of Dhaka",
+    fund: "Health Economics Unit (HEU), Ministry of Health and Family Welfare (MoHFW), Government of the People’s Republic of Bangladesh",
+    date: "22 Jun 2026 – Present",
+    role: "Research Associate",
+    current: true,
+    points: [
+      "Research activities: EOI preparation, research proposal writing, research design, methodology development, questionnaire development, data analysis and report writing.",
+      "Field & other activities: administrative and document preparation, training enumerators, qualitative data collection (FGD, KII, IDI), facility assessment, technical assistance.",
+    ],
   },
 ]
 
