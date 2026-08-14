@@ -15,6 +15,7 @@ timeline and scroll-reveal transitions.
 - **Education** — academic background
 - **Skills** — spatial analysis, programming, languages & training
 - **Awards** — grants, fellowships & achievements
+- **Projects** — full project history
 - **Contact** — email, phone, address, references & social links
 
 All content lives in a single data file: [`lib/cv-data.ts`](lib/cv-data.ts).
