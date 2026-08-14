@@ -77,9 +77,11 @@ export function Hero() {
             <div className="absolute inset-0 rounded-2xl bg-grid opacity-40" />
             <div className="relative flex h-full flex-col items-center justify-center">
               <div className="flex h-32 w-32 items-center justify-center rounded-full border border-primary/40 bg-primary/10 sm:h-36 sm:w-36">
-                <span className="font-display text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-                  {profile.initials}
-                </span>
+                <img
+          src="/asset/profile.jpg"
+          alt={profile.name}
+          className="h-full w-full object-cover"
+        />
               </div>
               <p className="mt-6 text-center font-display text-sm font-semibold tracking-tight">
                 Md Sohan Khan
