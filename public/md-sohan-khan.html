@@ -230,6 +230,32 @@
   .award-date { font-size: 12px; color: var(--accent); font-family: var(--font-display); margin-top: 4px; letter-spacing: .03em; }
   .award-desc { font-size: 13px; color: #b6c3d2; margin-top: 6px; }
 
+    /* ---------- Projects ---------- */
+  .timeline { position: relative; margin-top: 10px; padding-left: 30px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; padding: 0 0 30px 0; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -30px; top: 6px; width: 14px; height: 14px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--primary);
+  }
+  .tl-item.cur::before { background: var(--primary); box-shadow: 0 0 0 4px rgba(52,208,216,0.2); }
+  .tl-date { font-family: var(--font-display); font-size: 12.5px; color: var(--accent); letter-spacing: .04em; }
+  .tl-role { font-size: 17px; margin: 4px 0 2px; }
+  .tl-org { font-size: 14px; color: var(--muted); }
+  .tl-detail { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 2px; }
+  .tl-project {
+    font-size: 13.5px; margin-top: 10px; padding: 9px 12px; border-radius: 8px;
+    background: var(--primary-dim); border: 1px solid rgba(52,208,216,0.28); color: #cbe9ea;
+  }
+  .tl-points { list-style: none; margin-top: 12px; display: grid; gap: 8px; }
+  .tl-points li { position: relative; padding-left: 18px; font-size: 14px; color: #c2cfdd; }
+  .tl-points li::before { content: "▸"; position: absolute; left: 0; color: var(--primary); }
+  .tl-tools { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+  .tl-tools b { color: var(--accent); font-weight: 600; }
+
+  .subhead { font-family: var(--font-display); font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted); margin: 6px 0 20px; }
+
   /* ---------- Contact ---------- */
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   .contact-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--border); font-size: 14.5px; }
@@ -328,9 +354,9 @@
         <h3>Md Sohan Khan</h3>
         <p class="loc">Dhaka, Bangladesh · Born 10 Mar 2001 · Bangladeshi</p>
         <div class="stat-grid">
-          <div class="stat"><div class="v">3.86</div><div class="l">Master's CGPA</div><div class="s">out of 4.00</div></div>
-          <div class="stat"><div class="v">12+</div><div class="l">Journal &amp; working papers</div><div class="s">authored / co-authored</div></div>
-          <div class="stat"><div class="v">10+</div><div class="l">Research roles</div><div class="s">leading institutions</div></div>
+          <div class="stat"><div class="v">3.86</div><div class="l">Master's CGPA</div><div class="s">Out of 4.00</div></div>
+          <div class="stat"><div class="v">12+</div><div class="l">Journal &amp; working papers</div><div class="s">Authored / co-authored</div></div>
+          <div class="stat"><div class="v">10+</div><div class="l">Research roles</div><div class="s">Across leading institutions</div></div>
           <div class="stat"><div class="v">2</div><div class="l">Fellowships</div><div class="s">SPARRSO &amp; NST</div></div>
         </div>
       </aside>
@@ -893,6 +919,37 @@
   </div>
 </section>
 
+
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects" class="bg-grid">
+  <div class="wrap">
+    <div class="mt-head reveal">
+      <span class="eyebrow">Projects</span>
+      <h2 class="section-title">Accomplished and Ongoing Projects</h2>
+      <p class="section-sub">Selected research, academic, and professional projects demonstrating expertise in disaster management, climate resilience, GIS, and applied research.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="reveal">
+        <div class="subhead">Project &amp; Research</div>
+        <div class="timeline">
+          <div class="tl-item cur">
+            <div class="tl-org">Institute of Disaster Management and Vulnerability Studies (IDMVS), University of Dhaka</div>
+            <div class="tl-project">Gender Responsive Health Care System in Bangladesh: Addressing the Dual Burden Challenge of Climate Change and Health Inequities.</div>
+            <div class="tl-date">22 Jun 2026 – Present</div>
+            <div class="tl-role">Research Associate (RA)</div>
+            <ul class="tl-points">
+              <li>EOI preparation, research proposal writing, research design, methodology development, questionnaire development, data analysis and report writing.</li>
+              <li>Field activities: administrative &amp; document preparation, training enumerators, qualitative data collection (FGD, KII, IDI), facility assessment, technical assistance.</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+  
 <!-- ===================== CONTACT ===================== -->
 <section id="contact">
   <div class="wrap">
